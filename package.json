@@ -1,0 +1,70 @@
+{
+  "name": "@pinyin/route",
+  "version": "0.0.1",
+  "description": "Type safe route serializer & deserializer (template & parser)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "rm -rf dist && npx tsc",
+    "test": "tsc && npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinyin/route.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "route"
+  ],
+  "author": "Bo Bao <bob432091@gmail.com> (https://github.com/pinyin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinyin/route/issues"
+  },
+  "homepage": "https://github.com/pinyin/route#readme",
+  "devDependencies": {
+    "@types/faker": "^4.1.2",
+    "@types/jest": "^23.1.2",
+    "@types/qs": "^6.5.1",
+    "faker": "^4.1.0",
+    "jest": "^23.2.0",
+    "qs": "^6.5.2",
+    "ts-jest": "^22.4.6",
+    "tslib": "^1.9.3",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "roots": [
+      "src"
+    ],
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "verbose": true,
+    "globals": {
+      "ts-jest": {
+        "enableTsDiagnostics": true
+      }
+    }
+  },
+  "dependencies": {
+    "runtypes": "^2.0.6",
+    "runtypes-generate": "^0.4.1"
+  }
+}
