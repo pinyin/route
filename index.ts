@@ -1,1 +1,2 @@
-export {getEmptyReducer} from './src/getEmptyReducer'
+export {createDeserializer} from './src/createDeserializer'
+export {createSerializer} from './src/createSerializer'

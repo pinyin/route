@@ -1,3 +1,4 @@
+import {createDeserializer} from '../createDeserializer'
 import {Dynamic} from '../Dynamic'
 import {SegmentPattern} from '../SegmentPattern'
 import {Template} from '../Template'
@@ -35,3 +36,15 @@ export const UserProjectTemplate: Template<UserProjectRoute> = (route: UserProje
         query: route.search
     }
 }
+
+
+type UserRoute = { type: 'user', userID: string }
+const pattern: SegmentPattern<UserRoute> = {
+    user: {
+        [Dynamic]: (userID: string) => () => ({type: 'user', userID})
+    },
+    [Dynamic]: unexpected
+}
+
+const deserializeRoute = createDeserializer(pattern)
+deserializeRoute('/user/4324234') // {type: 'user', userID: 4324234}

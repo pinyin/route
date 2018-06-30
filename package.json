@@ -62,9 +62,5 @@
         "enableTsDiagnostics": true
       }
     }
-  },
-  "dependencies": {
-    "runtypes": "^2.0.6",
-    "runtypes-generate": "^0.4.1"
   }
 }

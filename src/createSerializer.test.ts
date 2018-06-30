@@ -4,7 +4,7 @@ import {UserProjectRoute, UserProjectTemplate} from './mocks/UserProject'
 
 describe(`${createSerializer.name}`, () => {
     test(`should return a serializer`, () => {
-        const serializer = createSerializer<UserProjectRoute>(UserProjectTemplate)
+        const serialize = createSerializer<UserProjectRoute>(UserProjectTemplate)
 
         for (let i = 0; i < 10; i++) {
             const route: UserProjectRoute = {
@@ -16,7 +16,7 @@ describe(`${createSerializer.name}`, () => {
 
             const url = `/user/${encodeURIComponent(route.userID)}/project/${encodeURIComponent(route.projectID)}?${encodeURIComponent(route.search)}#${encodeURIComponent(route.scroll.toString())}`
 
-            expect(serializer.serialize(route)).toEqual(url)
+            expect(serialize(route)).toEqual(url)
         }
     })
 })

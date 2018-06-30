@@ -5,8 +5,8 @@ import {UserProjectPattern, UserProjectRoute, UserProjectTemplate} from './mocks
 
 describe(`${createDeserializer.name}`, () => {
     test(`should return a deserializer`, () => {
-        const serializer = createSerializer<UserProjectRoute>(UserProjectTemplate)
-        const deserializer = createDeserializer<UserProjectRoute>(UserProjectPattern)
+        const serialize = createSerializer<UserProjectRoute>(UserProjectTemplate)
+        const deserialize = createDeserializer<UserProjectRoute>(UserProjectPattern)
 
         for (let i = 0; i < 10; i++) {
             const route: UserProjectRoute = {
@@ -15,8 +15,8 @@ describe(`${createDeserializer.name}`, () => {
                 scroll: faker.random.number(),
                 search: faker.random.words()
             }
-            const url = serializer.serialize(route)
-            const deserializedRoute = deserializer.deserialize(url)
+            const url = serialize(route)
+            const deserializedRoute = deserialize(url)
             expect(deserializedRoute).toEqual(route)
         }
     })
